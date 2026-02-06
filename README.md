@@ -1,30 +1,37 @@
 # 🚀 Pipeline de Automatización: Valor de Inventario y Portal Ejecutivo
 
-Este proyecto resuelve la necesidad crítica de visualizar el valor financiero del stock en tiempo real, consolidando datos heterogéneos en una solución automatizada y portátil.
+Este proyecto resuelve la necesidad crítica de visualizar el valor financiero del stock en tiempo real, consolidando datos heterogéneos en una solución automatizada, interactiva y portátil.
 
 ## 💡 Valor del Proyecto
-Como **Analytics Engineer**, desarrollé este sistema para eliminar el procesamiento manual de reportes diarios. El pipeline reduce el tiempo de consolidación de horas a **segundos**, garantizando la integridad referencial entre 5 fuentes de datos distintas.
+Como **Analytics Engineer**, desarrollé este sistema para eliminar el procesamiento manual de reportes diarios. El pipeline transforma datos crudos en insights ejecutivos, reduciendo el tiempo de consolidación de horas a **segundos** y garantizando la integridad referencial entre 5 fuentes de datos distintas (Inventarios, Tránsitos, DOH, OC y Entradas).
 
 ## 🛠️ Stack Tecnológico
-* **Python (Pandas):** Motor ETL para limpieza, transformación y cálculos financieros de DOH (Days On Hand).
-* **Matplotlib:** Generación dinámica de gráficas de comportamiento semanal y cumplimiento de objetivos.
-* **HTML5 / Bootstrap:** Frontend interactivo y responsivo para visualización gerencial.
-* **Openpyxl:** Automatización y formateo profesional de reportes maestros en Excel.
+* **Python (Pandas):** Motor ETL avanzado para limpieza, transformación y cálculos de métricas financieras como DOH (Days On Hand) y variaciones diarias.
+* **Matplotlib:** Generación automatizada de visualizaciones de datos (comportamiento semanal vs. objetivos).
+* **HTML5 & CSS3:** Estructura y diseño de interfaz con branding corporativo y animaciones personalizadas.
+* **JavaScript:** Lógica de interactividad para la navegación del portal y dinamismo en la presentación de métricas y animaciones.
+* **Bootstrap 5:** Framework para garantizar un diseño responsivo y moderno.
+* **Openpyxl:** Engine de automatización para la generación de reportes maestros en Excel con formato contable.
 
 ## ⚙️ Inteligencia de Rutas y Portabilidad
-El sistema cuenta con una **lógica de detección de entorno**. Si detecta la red corporativa, opera en modo producción sincronizando con los servidores; de lo contrario, utiliza la carpeta `data_samples` para demostraciones funcionales, permitiendo que este portafolio sea 100% ejecutable en cualquier entorno local.
+El sistema integra una **lógica de detección de entorno (Environment Awareness)**. Mediante el uso de la librería `pathlib`, el script identifica si tiene acceso a la red corporativa. De lo contrario, se autoconfigura para utilizar el directorio `data_samples`, permitiendo que este portafolio sea **100% ejecutable** en cualquier entorno local de forma inmediata.
 
-## 📂 Estructura del Repositorio
-* **`data_samples/`**: Archivos fuente anonimizados para pruebas del pipeline.
-* **`scripts/`**: Código fuente en Python (`valor_inventario.py` y `actualizar_portal.py`).
-* **`web/`**: Plantilla HTML y recursos visuales del portal ejecutivo.
-* **`output/`**: Directorio donde el sistema genera el Excel consolidado y el portal web final.
+## 📂 Arquitectura del Proyecto
+La solución se organiza bajo la carpeta raíz `pipeline_valor_inventario_github` para mantener una estructura modular y profesional:
 
-## 🚀 Cómo ejecutarlo
-1. Clona el repositorio.
-2. Asegúrate de tener instaladas las dependencias: `pip install pandas openpyxl matplotlib`.
-3. Ejecuta el script principal: `python scripts/valor_inventario.py`.
-4. Visualiza los resultados generados en la carpeta `output/`.
+* **`pipeline_valor_inventario_github/data_samples/`**: Datasets anonimizados para pruebas del pipeline.
+* **`pipeline_valor_inventario_github/scripts/`**: Lógica de procesamiento de datos (`valor_inventario.py`) y motor de renderizado web (`actualizar_portal.py`).
+* **`pipeline_valor_inventario_github/web/`**: Plantilla base (`index.html`), activos visuales y lógica de estilos.
+* **`output/`**: Directorio de salida generado automáticamente donde reside el Excel final y el portal web dinámico.
+
+## 🚀 Guía de Ejecución
+1.  Clonar el repositorio.
+2.  Instalar dependencias: `pip install pandas openpyxl matplotlib`.
+3.  Ejecutar el pipeline:
+    ```bash
+    python pipeline_valor_inventario_github/scripts/valor_inventario.py
+    ```
+4.  Consultar resultados en el directorio `output/` recién creado.
 
 ---
-> **Nota de Privacidad:** Los datos en `data_samples/` han sido anonimizados y los valores numéricos alterados para proteger la confidencialidad de la empresa original, manteniendo intacta la lógica funcional del sistema.
+> **Nota de Privacidad:** Los datos en `data_samples/` han sido anonimizados y los valores numéricos alterados para proteger la confidencialidad de la información original, manteniendo intacta la lógica funcional y financiera del sistema.
