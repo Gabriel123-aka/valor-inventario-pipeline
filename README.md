@@ -3,12 +3,24 @@
 Este proyecto resuelve la necesidad crítica de visualizar el valor financiero del stock en tiempo real, consolidando datos heterogéneos en una solución automatizada, interactiva y portátil.
 
 ## 💡 Valor del Proyecto
-Como **Analytics Engineer**, desarrollé este sistema para eliminar el procesamiento manual de reportes diarios. El pipeline transforma datos crudos en insights ejecutivos, reduciendo el tiempo de consolidación de horas a **segundos** y garantizando la integridad referencial entre 5 fuentes de datos distintas:
-* Inventarios (Existencias y Costos)
-* Tránsitos (Movimientos en camino)
-* DOH (Days On Hand / Días de Inventario)
-* OC (Órdenes de Compra Pendientes)
-* Entradas (Recepciones de mercancía)
+Como **Analytics Engineer**, desarrollé este sistema para eliminar el procesamiento manual de reportes diarios. El pipeline transforma datos crudos en insights ejecutivos, reduciendo el tiempo de consolidación de  **horas** a **segundos** y garantizando la integridad referencial entre 5 fuentes de datos distintas:
+* **Inventarios**: Existencias y Costos.
+* **Tránsitos**: Movimientos en camino.
+* **DOH (Days On Hand)**: Días de inventario proyectado.
+* **OC**: Órdenes de Compra Pendientes.
+* **Entradas**: Recepciones de mercancía.
+
+## ⏱️ Eficiencia Operativa y Automatización
+Originalmente, la consolidación de estos datos, la validación de costos y la generación de las visualizaciones requería **2 horas de trabajo manual diario**. Con esta implementación, el proceso completo de extracción, transformación y carga (ETL) se ejecuta en **30 segundos**. 
+
+Además, el sistema está diseñado para operar de forma **autónoma** mediante el **Programador de Tareas de Windows**, ejecutándose cada mañana para que los directivos cuenten con información fresca en el portal web antes de iniciar su jornada, sin intervención humana.
+
+
+
+## 🌐 Sincronización con Red Corporativa
+El valor agregado fundamental de este pipeline es su capacidad de **sincronización dinámica**. En un entorno de producción, el script está programado para consultar directamente los archivos fuente generados diariamente en la carpeta de red (`UNC Path`). 
+
+> **Nota para el Usuario:** Debido a que este repositorio es una versión portátil diseñada para portafolio, el pipeline tiene "congelada" su lógica de búsqueda en la fecha **07/02/2026**. Esto garantiza que, aunque el script se ejecute en un entorno externo sin acceso a la red corporativa, siempre encontrará los datasets de muestra en `data_samples` y generará un reporte coherente y funcional, demostrando la robustez del código y su adaptabilidad.
 
 ## 🛠️ Stack Tecnológico
 * **Python (Pandas):** Motor ETL avanzado para limpieza, transformación y cálculos de métricas financieras.
@@ -18,8 +30,6 @@ Como **Analytics Engineer**, desarrollé este sistema para eliminar el procesami
 
 ## ⚙️ Inteligencia de Rutas y Portabilidad
 El sistema integra una **lógica de detección de entorno (Environment Awareness)**. Mediante el uso de la librería `pathlib`, el script identifica si tiene acceso a la red corporativa. De lo contrario, activa automáticamente el **"Modo Demo"**, utilizando el directorio `data_samples` y protegiendo los resultados en una carpeta local de salida. Esto permite que el portafolio sea **100% ejecutable** en cualquier entorno local de forma inmediata.
-
-
 
 ## 📂 Arquitectura del Proyecto
 La solución se organiza de forma modular para garantizar la escalabilidad y el orden profesional:
@@ -32,16 +42,19 @@ La solución se organiza de forma modular para garantizar la escalabilidad y el 
 * **`└── output/`**: Directorio de salida generado automáticamente con el reporte Excel y el Portal Web.
 
 ## 🚀 Guía de Ejecución
-1.  **Clonar el repositorio** en tu máquina local.
-2.  **Instalar dependencias**:
-    ```bash
-    pip install -r pipeline_valor_inventario_github/requirements.txt
-    ```
-3.  **Ejecutar el pipeline**:
-    ```bash
-    python pipeline_valor_inventario_github/scripts/valor_inventario.py
-    ```
-4.  **Consultar resultados** en el directorio `output/` recién creado.
+1. **Clonar el repositorio** en tu máquina local.
+2. **Instalar dependencias**:
+   ```bash
+   pip install -r pipeline_valor_inventario_github/requirements.txt
+   ```
+  
+3. **Ejecutar el pipeline**:
+   ```bash
+   python pipeline_valor_inventario_github/scripts/valor_inventario.py
+   ```
 
----
-> **Nota de Privacidad:** Los datos en `data_samples/` han sido anonimizados y los valores numéricos alterados para proteger la confidencialidad de la información original, manteniendo intacta la lógica funcional y financiera del sistema.
+4. **Consultar resultados** en el directorio **output/** recién creado.
+
+## Nota de Privacidad:
+Los datos en **data_samples/** han sido anonimizados y los valores numéricos alterados para proteger la confidencialidad de la información original, manteniendo intacta la lógica funcional y financiera del sistema.
+   
