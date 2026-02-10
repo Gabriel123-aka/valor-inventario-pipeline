@@ -42,8 +42,23 @@ La solución se organiza de forma modular para garantizar la escalabilidad y el 
 * **`└── output/`**: Directorio de salida generado automáticamente con el reporte Excel y el Portal Web.
 
 ## 🚀 Guía de Ejecución
-1. **Clonar el repositorio** en tu máquina local.
-2. **Crear y activar entorno virtual (Opcional pero recomendado).**
+1. **Clonar el repositorio** en tu máquina local en la ubicación que prefieras:
+   ```bash
+   git clone https://github.com/Gabriel123-aka/valor-inventario-pipeline.git
+   cd valor-inventario-pipeline
+   ```
+2. **Crear y activar entorno virtual (Opcional pero recomendado)**:
+   ```bash
+   # Crear el entorno
+   python -m venv venv
+
+   # Activar en Windows (PowerShell/CMD):
+   .\venv\Scripts\activate
+
+   # Activar en Mac/Linux:
+   source venv/bin/activate
+   ```
+   
 3. **Instalar dependencias**:
    ```bash
    pip install -r pipeline_valor_inventario_github/requirements.txt
@@ -54,7 +69,13 @@ La solución se organiza de forma modular para garantizar la escalabilidad y el 
    python pipeline_valor_inventario_github/scripts/valor_inventario.py
    ```
 
-5. **Consultar resultados** en el directorio **output/** recién creado.
+5. **Consultar resultados** Al finalizar, el sistema generará automáticamente la carpeta pipeline_valor_inventario_github/output/ conteniendo el reporte maestro en Excel y el Portal Web actualizado:
+   
+    ```bash
+    # Ejecutar este comando para abrir el portal desde la termianl:
+   ii pipeline_valor_inventario_github/output/index.html
+   ```
+   
 
 ## Nota de Privacidad:
 Los datos en **data_samples/** han sido anonimizados y los valores numéricos alterados para proteger la confidencialidad de la información original, manteniendo intacta la lógica funcional y financiera del sistema.
