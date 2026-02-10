@@ -43,17 +43,18 @@ La solución se organiza de forma modular para garantizar la escalabilidad y el 
 
 ## 🚀 Guía de Ejecución
 1. **Clonar el repositorio** en tu máquina local.
-2. **Instalar dependencias**:
+2. **Crear y activar entorno virtual (Opcional pero recomendado).**
+3. **Instalar dependencias**:
    ```bash
    pip install -r pipeline_valor_inventario_github/requirements.txt
    ```
   
-3. **Ejecutar el pipeline**:
+4. **Ejecutar el pipeline**:
    ```bash
    python pipeline_valor_inventario_github/scripts/valor_inventario.py
    ```
 
-4. **Consultar resultados** en el directorio **output/** recién creado.
+5. **Consultar resultados** en el directorio **output/** recién creado.
 
 ## Nota de Privacidad:
 Los datos en **data_samples/** han sido anonimizados y los valores numéricos alterados para proteger la confidencialidad de la información original, manteniendo intacta la lógica funcional y financiera del sistema.
